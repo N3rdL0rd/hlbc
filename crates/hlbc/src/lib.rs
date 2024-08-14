@@ -57,7 +57,7 @@ pub enum Error {
 /// Every field is public for flexibility, but you aren't encouraged to modify them.
 ///
 /// This type is like an arena, you usually work with custom
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Bytecode {
     /// Bytecode format version
     pub version: u8,
@@ -96,6 +96,8 @@ pub struct Bytecode {
     fnames: HashMap<Str, usize>,
     pub globals_initializers: HashMap<RefGlobal, usize>,
 }
+
+
 
 impl Bytecode {
     /// Get the entrypoint function.
