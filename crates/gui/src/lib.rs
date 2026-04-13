@@ -111,6 +111,10 @@ impl eframe::App for App {
 
         self.windows(ctx);
     }
+
+    fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
+        egui::Color32::from_rgb(0x0d, 0x10, 0x11).to_normalized_gamma_f32()
+    }
 }
 
 impl App {
